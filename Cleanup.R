@@ -97,7 +97,7 @@ combinedData1<-group_by(combinedData1,activityName,subjectId)
 meanOfCombinedData<-combinedData1%>%summarise_if(is.numeric,mean)
 
 ##Write the results of the above step (the "tidy data") into a file
-write.table(meanOfCombinedData,file="Tidy.txt",col.names=TRUE)
+write.table(meanOfCombinedData,file="Tidy.txt",col.names=TRUE,row.names=FALSE)
 
 ##Write the variable names (headers) for the tidy data into a file 
 write.table(names(meanOfCombinedData),file="Features_Tidy.txt",col.names=FALSE)
